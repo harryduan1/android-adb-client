@@ -1,6 +1,6 @@
 # Makefile for adb; from https://heiher.info/2227.html
 #CC:=arm-oe-linux-gnueabi-gcc
-CC:=arm-linux-gnueabi-gcc
+CC:=aarch64-linux-musl-gcc
 
 VPATH+= ./
 SRCS+= adb.c
@@ -43,14 +43,18 @@ CPPFLAGS+= -DHAVE_TERMIO_H
 CPPFLAGS+= -I./
 CPPFLAGS+= -I../include
 
-CPPFLAGS+= -I/home/a/lchen/build-tools/openssl/include
-CPPFLAGS+= -I/home/a/lchen/build-tools/zlib/include
+CPPFLAGS+= -I/home/duanhuanyu/project/zz/shared_cabinet/android-tools-4.2.2/openssl-1.0.0e/include
+CPPFLAGS+= -I/home/duanhuanyu/project/zz/shared_cabinet/android-tools-4.2.2/libz/include
 
-LDFLAGS+= -L/home/a/lchen/build-tools/openssl/lib
-LDFLAGS+= -L/home/a/lchen/build-tools/zlib/lib
-LIBS+= -lc -lpthread -lz -lcrypto
+LDFLAGS+= -L/home/duanhuanyu/project/zz/shared_cabinet/android-tools-4.2.2/openssl-1.0.0e
+LDFLAGS+= -L/home/duanhuanyu/project/zz/shared_cabinet/android-tools-4.2.2/libz/lib
+# LIBS+=  -lcrypto -lz -lc -lpthread
+LIBS+=  -lcrypto -lz -lpthread
+
+LDFLAGS += -static
 
 OBJS= $(SRCS:.c=.o)
+OBJS += dummy_ui_openssl.o
 
 all: adb
 

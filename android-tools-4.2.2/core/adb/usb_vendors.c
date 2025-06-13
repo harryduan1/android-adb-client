@@ -135,6 +135,8 @@
 #define VENDOR_ID_MEIZU         0x2a45
 // BQ's USB Vendor ID
 #define VENDOR_ID_BQ            0x2a47
+// Qualcomm's USB Vendor ID for QRB5
+#define VENDOR_ID_QRB5          0x05c6
 
 
 /** built-in vendor list */
@@ -189,6 +191,7 @@ int builtInVendorIds[] = {
     VENDOR_ID_TELEEPOCH,
     VENDOR_ID_MEIZU,
     VENDOR_ID_BQ,
+    VENDOR_ID_QRB5,
 };
 
 #define BUILT_IN_VENDOR_COUNT    (sizeof(builtInVendorIds)/sizeof(builtInVendorIds[0]))
