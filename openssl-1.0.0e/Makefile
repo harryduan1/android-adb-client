@@ -13,8 +13,8 @@ SHLIB_MAJOR=1
 SHLIB_MINOR=0.0
 SHLIB_EXT=
 PLATFORM=os/compiler
-OPTIONS=os/compiler:aarch64-linux-musl-gcc --prefix=/home/duanhuanyu/project/zz/shared_cabinet/android-tools-4.2.2/openssl-1.0.0e/../libopenssl no-dso no-gmp no-jpake no-krb5 no-md2 no-rc5 no-rfc3779 no-shared no-store no-zlib no-zlib-dynamic static-engine
-CONFIGURE_ARGS=no-shared no-dso no-zlib os/compiler:aarch64-linux-musl-gcc --prefix=/home/duanhuanyu/project/zz/shared_cabinet/android-tools-4.2.2/openssl-1.0.0e/../libopenssl
+OPTIONS=os/compiler:aarch64-linux-musl-gcc --prefix=/home/duanhuanyu/project/personal/android-adb-client/openssl-1.0.0e/../libopenssl no-dso no-gmp no-jpake no-krb5 no-md2 no-rc5 no-rfc3779 no-shared no-store no-zlib no-zlib-dynamic static-engine
+CONFIGURE_ARGS=no-shared no-dso no-zlib os/compiler:aarch64-linux-musl-gcc --prefix=/home/duanhuanyu/project/personal/android-adb-client/openssl-1.0.0e/../libopenssl
 SHLIB_TARGET=
 
 # HERE indicates where this Makefile lives.  This can be used to indicate
@@ -26,10 +26,10 @@ HERE=.
 # for, say, /usr/ and yet have everything installed to /tmp/somedir/usr/.
 # Normally it is left empty.
 INSTALL_PREFIX=
-INSTALLTOP=/home/duanhuanyu/project/zz/shared_cabinet/android-tools-4.2.2/openssl-1.0.0e/../libopenssl
+INSTALLTOP=/home/duanhuanyu/project/personal/android-adb-client/openssl-1.0.0e/../libopenssl
 
 # Do not edit this manually. Use Configure --openssldir=DIR do change this!
-OPENSSLDIR=/home/duanhuanyu/project/zz/shared_cabinet/android-tools-4.2.2/openssl-1.0.0e/../libopenssl/ssl
+OPENSSLDIR=/home/duanhuanyu/project/personal/android-adb-client/openssl-1.0.0e/../libopenssl/ssl
 
 # NO_IDEA - Define to build without the IDEA algorithm
 # NO_RC4  - Define to build without the RC4 algorithm
@@ -494,7 +494,7 @@ dist:
 dist_pem_h:
 	(cd crypto/pem; $(MAKE) -e $(BUILDENV) pem.h; $(MAKE) clean)
 
-install: all install_docs install_sw
+install: install_sw
 
 install_sw:
 	@$(PERL) $(TOP)/util/mkdir-p.pl $(INSTALL_PREFIX)$(INSTALLTOP)/bin \

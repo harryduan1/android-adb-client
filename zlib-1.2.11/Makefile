@@ -45,7 +45,7 @@ TAR=tar
 SHELL=/bin/sh
 EXE=
 
-prefix =/home/duanhuanyu/project/zz/shared_cabinet/android-tools-4.2.2/zlib-1.2.11/../libz
+prefix =../libz
 exec_prefix =${prefix}
 libdir =${exec_prefix}/lib
 sharedlibdir =${libdir}

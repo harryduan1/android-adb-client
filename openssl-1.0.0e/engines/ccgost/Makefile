@@ -40,8 +40,8 @@ lib: $(LIBOBJ)
 	@touch lib
 
 install:
-	[ -n "$(INSTALLTOP)" ] # should be set by top Makefile...
-	if [ -n "$(SHARED_LIBS)" ]; then \
+	@[ -n "$(INSTALLTOP)" ] # should be set by top Makefile...
+	@if [ -n "$(SHARED_LIBS)" ]; then \
 		set -e; \
 		echo installing $(LIBNAME); \
 		pfx=lib; \

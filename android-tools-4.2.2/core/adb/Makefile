@@ -43,11 +43,11 @@ CPPFLAGS+= -DHAVE_TERMIO_H
 CPPFLAGS+= -I./
 CPPFLAGS+= -I../include
 
-CPPFLAGS+= -I/home/duanhuanyu/project/zz/shared_cabinet/android-tools-4.2.2/openssl-1.0.0e/include
-CPPFLAGS+= -I/home/duanhuanyu/project/zz/shared_cabinet/android-tools-4.2.2/libz/include
+CPPFLAGS+= -I../../../libopenssl/include
+CPPFLAGS+= -I../../../libz/include
 
-LDFLAGS+= -L/home/duanhuanyu/project/zz/shared_cabinet/android-tools-4.2.2/openssl-1.0.0e
-LDFLAGS+= -L/home/duanhuanyu/project/zz/shared_cabinet/android-tools-4.2.2/libz/lib
+LDFLAGS+= -L../../../libopenssl/lib
+LDFLAGS+= -L../../../libz/lib
 # LIBS+=  -lcrypto -lz -lc -lpthread
 LIBS+=  -lcrypto -lz -lpthread
 
