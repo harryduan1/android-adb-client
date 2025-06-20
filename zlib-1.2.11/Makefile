@@ -45,7 +45,7 @@ TAR=tar
 SHELL=/bin/sh
 EXE=
 
-prefix =../libz
+prefix =/home/duanhuanyu/project/personal/android-adb-client/zlib-1.2.11/../libz
 exec_prefix =${prefix}
 libdir =${exec_prefix}/lib
 sharedlibdir =${libdir}

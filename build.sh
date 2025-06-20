@@ -11,16 +11,17 @@ export PATH=$PATH:$(pwd)/aarch64-linux-musl-cross/bin
 # # #compile zlib for aarch64-linux-musl
 cd $repo_dir/zlib-1.2.11
 make clean
-# chmod +x configure
-# CC=aarch64-linux-musl-gcc ./configure --static --prefix=$(pwd)/../libz
+chmod +x configure
+CC=aarch64-linux-musl-gcc ./configure --static --prefix=$(pwd)/../libz
 make
 make install
 
 # #compile openssl for aarch64-linux-musl
 cd $repo_dir/openssl-1.0.0e
 make clean
-# chmod +x Configure
-# ./Configure no-shared no-dso no-zlib os/compiler:aarch64-linux-musl-gcc --prefix=$(pwd)/../libopenssl
+chmod +x Configure
+./Configure no-shared no-dso no-zlib os/compiler:aarch64-linux-musl-gcc --prefix=$(pwd)/../libopenssl
+sed -i '242s/.*/build_all: build_libs/' $repo_dir/openssl-1.0.0e/Makefile
 make
 make install
 

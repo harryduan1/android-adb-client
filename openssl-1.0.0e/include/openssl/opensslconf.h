@@ -71,8 +71,8 @@
 
 #if !(defined(VMS) || defined(__VMS)) /* VMS uses logical names instead */
 #if defined(HEADER_CRYPTLIB_H) && !defined(OPENSSLDIR)
-#define ENGINESDIR "/home/duanhuanyu/project/zz/shared_cabinet/android-tools-4.2.2/openssl-1.0.0e/../libopenssl/lib/engines"
-#define OPENSSLDIR "/home/duanhuanyu/project/zz/shared_cabinet/android-tools-4.2.2/openssl-1.0.0e/../libopenssl/ssl"
+#define ENGINESDIR "/home/duanhuanyu/project/personal/android-adb-client/openssl-1.0.0e/../libopenssl/lib/engines"
+#define OPENSSLDIR "/home/duanhuanyu/project/personal/android-adb-client/openssl-1.0.0e/../libopenssl/ssl"
 #endif
 #endif
 
