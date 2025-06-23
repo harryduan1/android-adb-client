@@ -22,6 +22,7 @@ make clean
 chmod +x Configure
 ./Configure no-shared no-dso no-zlib os/compiler:aarch64-linux-musl-gcc --prefix=$(pwd)/../libopenssl
 sed -i '242s/.*/build_all: build_libs/' $repo_dir/openssl-1.0.0e/Makefile
+sed -i '497s/.*/install: install_sw/' $repo_dir/openssl-1.0.0e/Makefile
 make
 make install
 
