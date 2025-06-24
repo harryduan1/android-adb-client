@@ -1,8 +1,11 @@
 repo_dir=$(pwd)
 echo "Repository directory: $repo_dir"
 
-if [ ! -d android-ndk-r25c ]; then
+if [ ! -e android-ndk-r25c-linux.zip ]; then
     wget https://dl.google.com/android/repository/android-ndk-r25c-linux.zip
+fi
+
+if [ ! -d android-ndk-r25c ]; then
     unzip android-ndk-r25c-linux.zip
 fi
 
