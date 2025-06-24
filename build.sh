@@ -1,18 +1,18 @@
 repo_dir=$(pwd)
 echo "Repository directory: $repo_dir"
 
-if [ ! -d aarch64-linux-musl-cross ]; then
-    wget https://musl.cc/aarch64-linux-musl-cross.tgz
-    tar -xzf aarch64-linux-musl-cross.tgz
+if [ ! -d android-ndk-r25c ]; then
+    wget https://dl.google.com/android/repository/android-ndk-r25c-linux.zip
+    unzip android-ndk-r25c-linux.zip
 fi
 
-export PATH=$PATH:$(pwd)/aarch64-linux-musl-cross/bin
+export PATH=$PATH:$repo_dir/android-ndk-r25c/toolchains/llvm/prebuilt/linux-x86_64/bin
 
 # # #compile zlib for aarch64-linux-musl
 cd $repo_dir/zlib-1.2.11
 make clean
 chmod +x configure
-CC=aarch64-linux-musl-gcc ./configure --static --prefix=$(pwd)/../libz
+CC=armv7a-linux-androideabi30-clang ./configure --static --prefix=$(pwd)/../libz
 make
 make install
 
@@ -20,7 +20,7 @@ make install
 cd $repo_dir/openssl-1.0.0e
 make clean
 chmod +x Configure
-./Configure no-shared no-dso no-zlib os/compiler:aarch64-linux-musl-gcc --prefix=$(pwd)/../libopenssl
+./Configure no-shared no-dso no-zlib os/compiler:armv7a-linux-androideabi30-clang --prefix=$(pwd)/../libopenssl
 sed -i '242s/.*/build_all: build_libs/' $repo_dir/openssl-1.0.0e/Makefile
 sed -i '497s/.*/install: install_sw/' $repo_dir/openssl-1.0.0e/Makefile
 make

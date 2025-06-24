@@ -1,6 +1,6 @@
 # Makefile for adb; from https://heiher.info/2227.html
 #CC:=arm-oe-linux-gnueabi-gcc
-CC:=aarch64-linux-musl-gcc
+CC:=armv7a-linux-androideabi30-clang
 
 VPATH+= ./
 SRCS+= adb.c
@@ -48,8 +48,12 @@ CPPFLAGS+= -I../../../libz/include
 
 LDFLAGS+= -L../../../libopenssl/lib
 LDFLAGS+= -L../../../libz/lib
+
+# CFLAGS += -fPIC
+# LDFLAGS += -Wl,-z,separate-code -Wl,-z,max-page-size=4096 -Wl,--no-relax
 # LIBS+=  -lcrypto -lz -lc -lpthread
-LIBS+=  -lcrypto -lz -lpthread
+# LIBS+=  -lcrypto -lz -lpthread
+LIBS+=  -lcrypto -lz
 
 LDFLAGS += -static
 
